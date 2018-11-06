@@ -1,4 +1,5 @@
 The DNS Tool
+
 The data comes from a custom DNS tool that does a real-time measurement which looks like a  "dig +trace" in an MTR style curses interface for 8 different hosts at the same time.  Displayed first before the measurement is the record type and TTL.  
 
 usage: ipv6_debug_dns_comparison_tool.py [-h] [--hostname HOSTNAME]
@@ -9,7 +10,10 @@ usage: ipv6_debug_dns_comparison_tool.py [-h] [--hostname HOSTNAME]
                                          target
                                          [addl_targets [addl_targets ...]]
 
+
+
 The CSV output:
+
 To generate the CSV data, the command is run in the following way.
 
 $ dns_comparison_tool.py --resolver 8.8.8.8 --csvfile 8.8.8.8-example.csv  \
@@ -22,9 +26,9 @@ $ head 8.8.8.8-example.csv
 "2017-09-16T13:52:06.058779",0.04862689971923828,0.1598529815673828,0.06502509117126465,0.041822195053100586,0.31532716751098633,"",0.039314985275268555,0.0497899055480957,0.027698993682861328,0.04254889488220215,0.15935277938842773,"",0.03935503959655762,0.16112494468688965,0.042749881744384766,0.033782958984375,0.27701282501220703,""
 
 
-
 The initial time stamp has the QUERY, is the TYPE and the TTL.  QUERY, TYPE and TTL items are only printed once.  
 The output between each target will need to have a blank column and look like this: ,, 
+
 The goal is to use this as a parity bit in case, for some odd reason, there was an extra hop, without some marker between targets data could get mixed.
 
 
